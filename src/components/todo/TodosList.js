@@ -1,0 +1,46 @@
+import { useContext, useState, useEffect } from "react";
+import { TodoContext } from "../../store/TodoContext";
+import Pagination from "../utilities/Pagination";
+import Todo from "./Todo";
+import alanBtn from "@alan-ai/alan-sdk-web";
+import classes from "./Todo.module.css";
+
+const TodosList = () => {
+  const {
+    state: { todos },
+    dispatch,
+  } = useContext(TodoContext);
+  const [todosPerPage] = useState(8);
+  const [currentPage, setCurrentPage] = useState(1);
+  // Get current posts
+  const indexOfLastTodo = currentPage * todosPerPage;
+  const indexOfFirstTodo = indexOfLastTodo - todosPerPage;
+  const currentTodo = todos.slice(indexOfFirstTodo, indexOfLastTodo);
+
+  const paginate = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  };
+  useEffect(() => {
+    alanBtn({
+      key: "21fdb362d25080992220db42caa44f712e956eca572e1d8b807a3e2338fdd0dc/stage",
+      onCommand: (commandData) => {
+        dispatch({ type: "ADD", task: commandData.data.toString() });
+      },
+    });
+     
+  }, [dispatch]);
+  return (
+    <div className={classes.list}>
+      {currentTodo.map((todo) => (
+        <Todo todo={todo} key={todo.id} />
+      ))}
+      <Pagination
+        todoPerPage={todosPerPage}
+        totalTodos={todos.length}
+        paginate={paginate}
+      />
+    </div>
+  );
+};
+
+export default TodosList;

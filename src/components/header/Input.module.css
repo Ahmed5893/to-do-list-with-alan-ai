@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+.header{
+border: 1px solid #fff;
+width: 50rem;
+padding: .5rem;
+box-shadow: 5px 5px 22px 5px rgba(255,255,255,0.44);
+
+}
+
+.title{
+padding-bottom: 1rem;
+font-family: 'Lobster', cursive;
+font-size: 3rem;
+font-weight: 400;
+
+}
+
+.header input{
+padding: 1.5rem;
+border-radius: .5rem;
+cursor: pointer;
+width: 25rem;
+
+}
+
+.header input:focus{
+    border: 0;
+    outline: none;
+    font-size: 1.5rem;
+    }
+
+.header input[type="submit"]{
+text-align: center;
+font-size: 1.2rem;
+width: 13rem;
+font-weight: bold;
+padding: 1.5rem;
+background-color: silver;
+margin-left: .5rem;
+}
+
+.header input[type="submit"]:hover{
+    
+    background-color: #00FFFF;
+    transform: scale(1.1);
+    }
+
+    .header input[type="submit"]:active{
+    
+        background-color: #00FFFF;
+        transform: scale(1);
+        }
+
+
+@media screen and (max-width: 650px) {
+   
+.header{
+    border: 1px solid #fff;
+    width: 38rem;
+    padding: .5rem;
+    box-shadow: 5px 5px 22px 5px rgba(255,255,255,0.44);
+    
+    }
+    .header input[type="submit"]{
+        text-align: center ;
+        font-size: .8rem;
+        width: 8rem;
+        font-weight: bold;
+        padding: 1.5rem 0;
+        background-color: silver;
+        margin-left: .5rem;
+
+       
+
+        }
+  }

@@ -1,0 +1,80 @@
+.todo-container {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+  padding: 1rem;
+  border: 1px solid #fff;
+  margin: 1rem;
+  position: relative;
+  text-align: left;
+  background-color: black;
+}
+
+.todo-container .edit {
+  color: #fff;
+  text-align: left;
+  width: 40rem;
+  max-width: 40rem;
+  font-size: 1.5rem;
+  font-weight: bold;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.complete {
+  text-decoration: line-through;
+  background-color: rgba(167, 158, 158, 0.061);
+}
+
+.edit:focus {
+  border: none;
+  outline: none;
+  background: none;
+}
+
+.todo-container input .todo-btn {
+  position: absolute;
+  right: 0.5rem;
+  bottom: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  width: 6rem;
+}
+
+.todo-btn button {
+  font-size: 1.8rem;
+  cursor: pointer;
+  border-radius: 0.5rem;
+}
+
+.todo-btn button:hover {
+  cursor: pointer;
+  background-color: rgb(185, 65, 65);
+}
+
+input::selection{
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    display: none;
+
+}
+
+@media screen and (max-width: 650px) {
+  .list {
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0 auto;
+  }
+ 
+  .todo-container{
+  height: 4.8rem;
+  }
+
+  .todo-container .edit {
+    width: 25rem;
+  }
+}
