@@ -5,6 +5,7 @@ border: 1px solid #fff;
 width: 50rem;
 padding: .5rem;
 box-shadow: 5px 5px 22px 5px rgba(255,255,255,0.44);
+position: relative;
 
 }
 
@@ -52,6 +53,15 @@ margin-left: .5rem;
         transform: scale(1);
         }
 
+        .icon{
+        font-size: 2rem;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        cursor: pointer;
+       
+        
+        }
 
 @media screen and (max-width: 650px) {
    

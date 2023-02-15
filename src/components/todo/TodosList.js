@@ -35,7 +35,8 @@ const TodosList = () => {
               (el) => el.task === commandData.data.toString()
             );
             const id = todos[index].id;
-            dispatch({ type: "REMOVE", id: id });
+            dispatch({ type:"REMOVE", id:id });
+            
             break;
           case "EDIT":
             const i = todos.findIndex(
@@ -48,11 +49,13 @@ const TodosList = () => {
             dispatch({
               type: "EDIT",id:x,taskModified:newItem});
             break;
+            
           default:
             break;
         }
       },
     });
+    return console.log('clean updated');
   }, [dispatch, todos]);
   return (
     <div className={classes.list}>
